@@ -20,7 +20,7 @@ spec:
         image: weaveworksdemos/carts:0.4.8
         env:
         ports:
-        - containerPort: 81
+        - containerPort: 80
         securityContext:
           runAsNonRoot: true
           runAsUser: 10001
