@@ -1,9 +1,3 @@
----
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: sock-shop
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -59,8 +53,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: carts
-  annotations:
-        prometheus.io/scrape: 'true'
   labels:
     name: carts
   namespace: sock-shop
@@ -189,8 +181,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: catalogue
-  annotations:
-        prometheus.io/scrape: 'true'
   labels:
     name: catalogue
   namespace: sock-shop
@@ -304,8 +294,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: front-end
-  annotations:
-        prometheus.io/scrape: 'true'
   labels:
     name: front-end
   namespace: sock-shop
@@ -373,8 +361,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: orders
-  annotations:
-        prometheus.io/scrape: 'true'
   labels:
     name: orders
   namespace: sock-shop
@@ -500,8 +486,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: payment
-  annotations:
-        prometheus.io/scrape: 'true'
   labels:
     name: payment
   namespace: sock-shop
@@ -552,8 +536,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: queue-master
-  annotations:
-        prometheus.io/scrape: 'true'
   labels:
     name: queue-master
   namespace: sock-shop
@@ -581,8 +563,6 @@ spec:
     metadata:
       labels:
         name: rabbitmq
-      annotations:
-        prometheus.io/scrape: "false"
     spec:
       containers:
       - name: rabbitmq
@@ -614,9 +594,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: rabbitmq
-  annotations:
-        prometheus.io/scrape: 'true'
-        prometheus.io/port: '9090'
   labels:
     name: rabbitmq
   namespace: sock-shop
@@ -649,8 +626,6 @@ spec:
     metadata:
       labels:
         name: session-db
-      annotations:
-        prometheus.io.scrape: "false"
     spec:
       containers:
       - name: session-db
@@ -742,8 +717,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: shipping
-  annotations:
-        prometheus.io/scrape: 'true'
   labels:
     name: shipping
   namespace: sock-shop
@@ -816,8 +789,6 @@ apiVersion: v1
 kind: Service
 metadata:
   name: user
-  annotations:
-        prometheus.io/scrape: 'true'
   labels:
     name: user
   namespace: sock-shop
